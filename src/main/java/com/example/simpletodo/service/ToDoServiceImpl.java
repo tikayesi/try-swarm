@@ -31,4 +31,14 @@ public class ToDoServiceImpl implements ToDoService{
     public ToDo getDetail(String id) {
         return toDoRepository.findById(id).get();
     }
+
+    @Override
+    public ToDo updateTodo(ToDo toDo) {
+        return toDoRepository.save(toDo);
+    }
+
+    @Override
+    public void deleteTodo(String id) {
+        toDoRepository.deleteById(id);
+    }
 }

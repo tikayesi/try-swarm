@@ -8,4 +8,7 @@ public interface ToDoService {
     public ToDo createTodo(ToDo toDo);
     List<ToDo> getTodolist();
     ToDo getDetail(String id);
+
+    ToDo updateTodo(ToDo toDo);
+    void deleteTodo(String id);
 }
