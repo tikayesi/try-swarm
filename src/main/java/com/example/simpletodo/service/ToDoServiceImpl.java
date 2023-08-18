@@ -3,6 +3,8 @@ package com.example.simpletodo.service;
 import com.example.simpletodo.entity.ToDo;
 import com.example.simpletodo.repository.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,6 +27,11 @@ public class ToDoServiceImpl implements ToDoService{
     @Override
     public List<ToDo> getTodolist() {
         return toDoRepository.findAll();
+    }
+
+    @Override
+    public Page getTodoPerPage(Pageable pageable) {
+        return toDoRepository.findAll(pageable);
     }
 
     @Override
